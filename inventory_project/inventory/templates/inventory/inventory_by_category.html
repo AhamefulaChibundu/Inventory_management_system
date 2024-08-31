@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Inventory by Category</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory by Category</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Total Quantity</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in category_totals %}
+                    <tr>
+                        <td>{{ category.category__name }}</td>
+                        <td>{{ category.total_quantity }}</td>
+                        <td>{{ category.total_value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'item_list' %}" class="btn btn-primary">Back to Inventory</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Delete Item</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ user.username }}!</h1>
+        </header>
+
+        <a href="{% url 'item_list' %}" class="btn btn-secondary">Home</a>
+
+        <form action="{% url 'logout' %}" method="post" class="logout-form" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+        
+        <h1>Delete Item</h1>
+        <p>Are you sure you want to delete the item "{{ item.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'item_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ item.name }}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ user.username }}!</h1>
+        </header>
+
+        <a href="{% url 'item_list' %}" class="btn btn-secondary">Home</a>
+
+        <form action="{% url 'logout' %}" method="post" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>        
+        <div class="item-detail">
+            <h1>{{ item.name }}</h1>
+            <p><strong>Description:</strong> {{ item.description }}</p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+            <p><strong>Price:</strong> {{ item.currency.symbol }}{{ item.unit_price }}</p>
+            <p><strong>Total Price:</strong> {{ item.currency.symbol }}{{ item.price }}</p>
+            <p><strong>Category:</strong> {{ item.category.name }}</p>
+            <a href="{% url 'item_update' item.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'item_delete' item.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'item_list' %}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>

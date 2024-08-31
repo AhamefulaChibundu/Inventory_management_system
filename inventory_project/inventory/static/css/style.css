@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center; /* Center text in container */
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout-form {
+    margin-left: auto; /* Push the form to the right */
+    float: right;
+    width: auto;
+}
+
+.logout-form button {
+    display: inline-block; /* Ensures button only takes up necessary space */
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+}
+
+form input, form select, form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Password Reset Specific Styles */
+.password-reset-form {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.password-reset-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.password-reset-form p {
+    margin-bottom: 10px;
+}
+
+.password-reset-form .btn {
+    margin-top: 10px;
+}
+
+/* Styles for links */
+.links-container {
+    margin-top: 20px; /* Space between form and links */
+}
+
+.link {
+    display: inline-block;
+    margin: 0 10px; /* Space between links */
+    text-decoration: none;
+    color: #007bff; /* Link color */
+    font-size: 16px;
+}
+
+.link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Styles for the register form */
+.register-form {
+    width: 60%; /* Adjust width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.register-form .form-group label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333;
+}
+
+.register-form .form-group input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.register-form .form-group .errorlist {
+    color: #dc3545; /* Red color for errors */
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Styles for the item detail page */
+.item-detail {
+    width: 60%; /* Adjust width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.item-detail h1 {
+    margin-top: 0; /* Remove margin at the top of the heading */
+}
+
+.item-detail p {
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+.item-detail strong {
+    color: #333; /* Color for labels */
+}
+
+.item-detail .btn {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.item-detail .btn-warning {
+    background-color: #ffc107;
+}
+
+.item-detail .btn-danger {
+    background-color: #dc3545;
+}
+
+.item-detail .btn-secondary {
+    background-color: #6c757d;
+}
+
+/* Styles for the logout form */
+.logout-form {
+    margin-left: auto; /* Push the form to the right */
+    display: inline-block;
+}

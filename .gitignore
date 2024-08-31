@@ -1,0 +1,9 @@
+myenv
+inventory_project/inventory_project/settings.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.vscode
+.env
+inventory_project/inventory/migrations/

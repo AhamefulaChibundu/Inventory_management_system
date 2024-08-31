@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Total Inventory Value</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Total Inventory Value</h1>
+        <p>The total value of your inventory is: {{ total_value }}</p>
+        <a href="{% url 'item_list' %}" class="btn btn-primary">Back to Inventory</a>
+    </div>
+</body>
+</html>

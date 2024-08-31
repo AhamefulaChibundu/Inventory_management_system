@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}My Inventory Management System{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'item_list' %}" class="btn btn-secondary">Home</a>
+        <a href="{% url 'total_inventory_value' %}" class="btn btn-info">Total Inventory Value</a>
+        <a href="{% url 'inventory_by_category' %}" class="btn btn-info">Inventory by Category</a>
+        <a href="{% url 'low_stock_notifications' %}" class="btn btn-warning">Low Stock</a>
+        <a href="{% url 'expiry_notifications' %}" class="btn btn-info">Expired Items</a>
+        <a href="{% url 'record_sale' %}" class="btn btn-info">Record Sale</a>
+        <a href="{% url 'sales_history' %}" class="btn btn-info">Sales history</a>
+        <form action="{% url 'logout' %}" method="post" class="logout-form" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

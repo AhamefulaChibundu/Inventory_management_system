@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% if form.instance.pk %}Edit Item{% else %}Add New Item{% endif %}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ user.username }}!</h1>
+        </header>
+
+        <a href="{% url 'item_list' %}" class="btn btn-secondary">Home</a>
+
+        <form action="{% url 'logout' %}" method="post" class="logout-form" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>        
+        <h1>{% if form.instance.pk %}Edit Item{% else %}Add New Item{% endif %}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'item_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
