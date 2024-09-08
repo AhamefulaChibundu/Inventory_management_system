@@ -9,7 +9,7 @@ from django.db.models import Sum, F
 @login_required
 def total_inventory_value(request):
     total_value = Item.objects.filter(user=request.user, is_deleted=False).aggregate(
-        total_value=Sum(F('price') * F('quantity'))
+        total_value=Sum(F('price'))
     )['total_value'] or 0
     return render(request, 'inventory/total_inventory_value.html', {'total_value': total_value})
 
